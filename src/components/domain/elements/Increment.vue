@@ -1,20 +1,27 @@
 <template>
-  <button class="button" @click="onClicked"><slot /></button>
+  <div class="increment">
+    <base-button :on-clicked="onClicked">
+      +
+    </base-button>
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import BaseButton from "@/components/gui/parts/BaseButton.vue";
 
 export default Vue.extend({
-  name: "BaseButton",
+  name: "Increment",
   props: {
     onClicked: {
       type: Function,
       required: true
     }
+  },
+  components: {
+    BaseButton
   }
 });
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="postcss" scoped></style>
